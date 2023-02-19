@@ -11,7 +11,7 @@ class CreateShoppingListsTable extends Migration
     {
         Schema::create('shopping_lists', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 128)->comment('「買うもの」の名前');
+            $table->string('name', 255)->comment('「買うもの」の名前');
             $table->unsignedBigInteger('user_id')->comment('「買うもの」を登録した人');
             $table->foreign('user_id')->references('id')->on('users');
             $table->dateTime('created_at')->useCurrent();
