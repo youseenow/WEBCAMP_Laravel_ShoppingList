@@ -16,6 +16,7 @@ class CreateShoppingListsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('updated_at')->useCurrent()->useCurrentOnUpdate();
+            $table->collation = 'utf8mb4_bin';
         });
     }
 
