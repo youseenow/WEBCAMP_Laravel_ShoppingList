@@ -21,7 +21,7 @@ class ShoppingListController extends Controller
         $per_page = 5;
 
         // ---------- ▽▽▽ 一覧の取得 ▽▽▽ ----------
-        $list = ShoppingListModel::where('user_id', Auth::id())->orderBy('id', 'ASC')->paginate($per_page);
+        $list = ShoppingListModel::where('user_id', Auth::id())->orderBy('name', 'asc')->paginate($per_page);
 
         // ---------- ▽▽▽ 一覧の表示 ▽▽▽ ----------
         return view('shopping_list.list', ['list' => $list]);
